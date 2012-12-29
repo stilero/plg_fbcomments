@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+    <name>Content - FB Commments</name>
+    <author>Daniel Eliasson - joomla at stilero.com</author>
+    <creationDate>2012-dec-29</creationDate>
+    <copyright>Copyright (c) 2012-dec-29 Stilero Webdesign http://www.stilero.com. All rights reserved.</copyright>
+    <authorEmail>joomla@stilero.com</authorEmail>
+    <authorUrl>www.stilero.com</authorUrl>
+    <version>1.0</version>
+    <license>GPLv2</license>
+    <description>Displays FB Comments after each article</description>
+    <files>
+        <filename plugin="fbcomments">fbcomments.php</filename>
+        <folder>fbcomments</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB.plg_content_fbcomments.ini</language>
+        <language tag="en-GB">en-GB.plg_content_fbcomments.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="settings" 
+                      label="PLG_CONTENT_FBCOMMENTS_SETTINGS">
+                <field name="width" 
+                       type="text" 
+                       default="470" 
+                       label="PLG_CONTENT_FBCOMMENTS_WIDTH" 
+                       description="PLG_CONTENT_FBCOMMENTS_WIDTH_DESC"/>
+                <field name="numposts" 
+                       type="text" 
+                       default="5" 
+                       label="PLG_CONTENT_FBCOMMENTS_NUMPOSTS" 
+                       description="PLG_CONTENT_FBCOMMENTS_NUMPOSTS_DESC"/>
+                <field name="color" 
+                       type="radio" 
+                       default="0" 
+                       label="PLG_CONTENT_FBCOMMENTS_COLOR" 
+                       description="PLG_CONTENT_FBCOMMENTS_COLOR_DESC">
+                    <option value="0">Light</option>
+                    <option value="1">Dark</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <administration>
+        <languages folder="language">
+            <language tag="en-GB">en-GB.plg_content_fbcomments.ini</language>
+            <language tag="en-GB">en-GB.plg_content_fbcomments.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
