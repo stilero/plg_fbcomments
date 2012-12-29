@@ -45,7 +45,7 @@ class plgContentFbcomments extends JPlugin {
        $component = JRequest::getVar('option');
         if(array_key_exists($component, $this->classNames)){
             $className = $this->classNames[$component];
-            JLoader::register( $className, FBCOMMENTS_INCLUDES.'FBCJArticle.php');
+            JLoader::register( $className, FBCOMMENTS_INCLUDES.'fbcjarticle.php');
             $articleFactory = new $className($article);
             $this->Article = $articleFactory->getArticleObj();
             if($this->debug == true){
@@ -85,7 +85,7 @@ class plgContentFbcomments extends JPlugin {
      */
     public function onContentAfterDisplay($context, $article, &$params, $limitstart=0){
         if( $context != 'com_content.article' && $context !='com_virtuemart.productdetails'){
-            return;
+            return '';
         }
         if( !$this->isArticleContext() ){
             return '';
@@ -93,7 +93,10 @@ class plgContentFbcomments extends JPlugin {
         if(!$this->loadClasses($article)){
             return '';
         }
-        $FBComments = new FBComments($this->Article->url);
+        if(!in_array($this->Article->catid, $this->params->def('categories'))){
+            return '';
+        }
+        $FBComments = new FBComments($this->Article->url, $this->params->def('width'), $this->params->def('numposts'), $this->params->def('color'));
         return $FBComments->getHTML();
     }
     

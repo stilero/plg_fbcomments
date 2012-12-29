@@ -18,9 +18,14 @@
         <language tag="en-GB">en-GB.plg_content_fbcomments.sys.ini</language>
     </languages>
     <config>
-        <fields name="params">
+        <fields name="params" addfieldpath="/plugins/content/fbcomments/fbcomments/elements">
             <fieldset name="settings" 
                       label="PLG_CONTENT_FBCOMMENTS_SETTINGS">
+                <field
+                        name="categories"
+                        type="categories"
+                        label="PLG_CONTENT_FBCOMMENTS_CATEGORIES"
+                        description="PLG_CONTENT_FBCOMMENTS_CATEGORIES_DESC" />
                 <field name="width" 
                        type="text" 
                        default="470" 
@@ -33,11 +38,11 @@
                        description="PLG_CONTENT_FBCOMMENTS_NUMPOSTS_DESC"/>
                 <field name="color" 
                        type="radio" 
-                       default="0" 
+                       default="light" 
                        label="PLG_CONTENT_FBCOMMENTS_COLOR" 
                        description="PLG_CONTENT_FBCOMMENTS_COLOR_DESC">
-                    <option value="0">Light</option>
-                    <option value="1">Dark</option>
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
                 </field>
             </fieldset>
         </fields>
