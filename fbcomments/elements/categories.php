@@ -34,7 +34,7 @@
 defined('_JEXEC') or die('Restricted access');
 class Categories{
     static function getCategories(){
-        $db =& JFactory::getDBO();
+        $db = JFactory::getDBO();
         $query =
             'SELECT '.$db->nameQuote('id').', '.$db->nameQuote('title').
                 ' FROM '.$db->nameQuote('#__categories').
