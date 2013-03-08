@@ -239,7 +239,7 @@ class FBCJArticle{
         jimport( 'joomla.filter.output' );
         $alias = $article->alias;
         if(empty($alias)) {
-            $db =& JFactory::getDBO();
+            $db = JFactory::getDBO();
             $query = 
                 'SELECT a.alias FROM '
                 .$db->nameQuote('#__content').' AS '.$db->nameQuote('a').
@@ -254,7 +254,7 @@ class FBCJArticle{
     
     private function categoryAlias($article){
         jimport( 'joomla.filter.output' );
-        $db =& JFactory::getDBO();
+        $db = JFactory::getDBO();
         $query = 
             'SELECT c.alias FROM '
             .$db->nameQuote('#__categories').' AS '.$db->nameQuote('c').
@@ -501,7 +501,7 @@ class FBCJVMArticle extends FBCJArticle{
         if($this->productImage != ''){
             return $this->productImage;
         }
-        $db =& JFactory::getDBO();
+        $db = JFactory::getDBO();
         $query =
             'SELECT medias.file_url_thumb'.
             ' FROM '.$db->nameQuote('#__virtuemart_product_medias').' AS '.$db->nameQuote('xref').
@@ -531,7 +531,7 @@ class FBCJVMArticle extends FBCJArticle{
     }
     
     public function url($article){
-        $u =& JURI::getInstance( JURI::root() );
+        $u = JURI::getInstance( JURI::root() );
         $host = $u->getHost();
         $scheme = $u->getScheme();
         $url = $scheme.'://'.$host.$article->link;
